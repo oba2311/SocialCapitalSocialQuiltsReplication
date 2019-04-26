@@ -1,8 +1,9 @@
 library(statnet)
+#install.packages('statnet')
 
 
 #########Program Code#################################
-setwd("~/ProgramsAndData/Data")
+setwd("/Users/oba2311/Desktop/Minerva/Senior/CS tutorial/final project/socialCapital/Data")
 name1="Support_6_Vlevel06_26_2011"
 name2="Clustering06_26_2011"
 
@@ -85,7 +86,7 @@ while(measurecount<=14){
         }
 
 	
-	setwd("~/ProgramsAndData/Results")
+	setwd("/Users/oba2311/Desktop/Minerva/Senior/CS tutorial/final project/socialCapital/Results")
 	
 	clust<-mat2[,measurecount]	
 	supp<-mat1[,measurecount]
@@ -111,31 +112,39 @@ while(measurecount<=14){
 	both.sorted.smoothed[,2]<-loess(both.sorted[,2]~xax, span=0.5)$fitted
 
 	name<-paste(name_base,"-", name_context, sep="") 
-	plotname=paste("/ProgramsAndData/Results/Clust_Supp_",name,".jpeg", sep="")
+	plotname=paste("/Users/oba2311/Desktop/Minerva/Senior/CS tutorial/final project/socialCapital/Results/Clust_Supp_",name,".jpeg", sep="")
 
 	plot(xax,supp.smoothed, type="l", lty=2, lwd=2, sub="Clustering vs. Support (Inverse CDF)", 
 		main=name, ylab="", xlab="", col='blue', ylim=c(0,1))
 	lines(xax,clust.smoothed, col='black',lty=1, lwd=2)
 	legend("topleft",  c("Support", "Clustering"), col=c(4,1), lty=c(2,1), ncol = 1, cex = 0.8)
-	savePlot(filename=plotname , type ="jpeg");
+  #savePlot(filename=plotname , type ="jpeg");
+	# alternative that works:
+	png(filename=plotname , width = 480, height = 480);
+	plot(1:10, type = 'l')
+	dev.off()
+	
 	
 
 	name<-paste(name_base,"-", name_context, sep="") 
-	plotname=paste("~/ProgramsAndData/Results/Supp_Ord_",name,".jpeg", sep="")
+	plotname=paste("/Users/oba2311/Desktop/Minerva/Senior/CS tutorial/final project/socialCapital/Results/Supp_Ord_",name,".jpeg", sep="")
 
 	plot(xax,both.sorted.smoothed[,1], type="l", lty=2, lwd=2, sub="Clustering vs. Support (Ordered by Support)", 
 		main=name, ylab="", xlab="", col='blue', ylim=c(0,1))
 	lines(xax,both.sorted.smoothed[,2], col='black',lty=1, lwd=2)
 	legend("topleft",  c("Support", "Clustering"), col=c(4,1), lty=c(2,1), ncol = 1, cex = 0.8)
-	savePlot(filename=plotname , type ="jpeg");
+	#savePlot(filename=plotname , type ="jpeg");
 	
+	png(filename=plotname , width = 480, height = 480);
+	plot(1:10, type = 'l')
+	dev.off()
 
 
 
 
 	measurecount<-measurecount+1
 }
-setwd("~/ProgramsAndData/Code")
+setwd("/Users/oba2311/Desktop/Minerva/Senior/CS tutorial/final project/socialCapital/Code")
 
 
 
