@@ -1,15 +1,25 @@
+<<<<<<< HEAD
 
 rm(list = ls())
+=======
+>>>>>>> 4712c3a07c9066896ec71e615bf89e1bacef4876
 library(statnet)
 
 
 #########Program Code#################################
+<<<<<<< HEAD
 # setwd("~/ProgramsAndData/Data")
 setwd("/Users/oba2311/Desktop/Minerva/Senior/CS tutorial/final project/socialCapital/originalCode/2010-0760_Data/Data")
 name1="Support_6_Vlevel06_26_2011"
 name2="SupportInv_6_Vlevel06_26_2011"
 
 
+=======
+setwd("~/ProgramsAndData/Data")
+name1="Support_6_Vlevel06_26_2011"
+name2="SupportInv_6_Vlevel06_26_2011"
+
+>>>>>>> 4712c3a07c9066896ec71e615bf89e1bacef4876
 temp1<-read.table(paste(name1,".csv", sep=""),  sep = ",", header=FALSE)
 mat1<-data.matrix(temp1)
 mat1<-mat1[-13,]
@@ -21,15 +31,19 @@ mat2<-mat2[-13,]
 mat2<-mat2[-21,]
 
 
+<<<<<<< HEAD
 # notice: the authors provide the general version in which iteration runs starting at 1 to generate 16 different
 # plots, out of which 1 (No 14)  is used in figure 5. I "hacked" it since the plotting method wouldn't work otherwise.
 
 # measurecount<-14
+=======
+>>>>>>> 4712c3a07c9066896ec71e615bf89e1bacef4876
 measurecount<-1
 while(measurecount<=16){
 	if(measurecount==1){
 		name_base="PFavors"
 		name_context="PFavors"
+<<<<<<< HEAD
         }
 	if(measurecount==2){
 		name_base="PFavors"
@@ -55,6 +69,33 @@ while(measurecount<=16){
 		name_base="Hedonic"
 		name_context="Hedonic"
         }
+=======
+        }	
+	if(measurecount==2){
+		name_base="PFavors"	
+		name_context="Hedonic (or) Favors"	
+        }	
+	if(measurecount==8){
+		name_base="PFavors"
+		name_context="All"
+        }	
+	if(measurecount==3){
+		name_base="IFavors"
+		name_context="IFavors"
+        }	
+	if(measurecount==4){
+		name_base="IFavors"
+		name_context="Hedonic (or) Favors"
+        }	
+	if(measurecount==9){
+		name_base="IFavors"
+		name_context="All"
+        }	
+	if(measurecount==5){
+		name_base="Hedonic"
+		name_context="Hedonic"
+        }	
+>>>>>>> 4712c3a07c9066896ec71e615bf89e1bacef4876
 	if(measurecount==6){
 		name_base="Hedonic"
 		name_context="Hedonic (or) Favors"
@@ -62,6 +103,7 @@ while(measurecount<=16){
 	if(measurecount==10){
 		name_base="Hedonic"
 		name_context="All"
+<<<<<<< HEAD
         }
 	if(measurecount==7){
 		name_base="Hedonic (or) Favors"
@@ -71,6 +113,17 @@ while(measurecount<=16){
 		name_base="All"
 		name_context="All"
         }
+=======
+        }	
+	if(measurecount==7){
+		name_base="Hedonic (or) Favors"
+		name_context="Hedonic (or) Favors"
+        }	
+	if(measurecount==11){
+		name_base="All"
+		name_context="All"
+        }	
+>>>>>>> 4712c3a07c9066896ec71e615bf89e1bacef4876
 	if(measurecount==12){
 		name_base="Favors"
 		name_context="Favors"
@@ -78,7 +131,11 @@ while(measurecount<=16){
 	if(measurecount==13){
 		name_base="Favors"
 		name_context="Hedonic (or) Favors"
+<<<<<<< HEAD
         }
+=======
+        }	
+>>>>>>> 4712c3a07c9066896ec71e615bf89e1bacef4876
 	if(measurecount==14){
 		name_base="Favors"
 		name_context="All"
@@ -131,6 +188,7 @@ while(measurecount<=16){
 		name_context1="Hed"	
 	}
 
+<<<<<<< HEAD
   
   # hack I added manually, as a work around if the plotting version doesn't work, i.e. it stops after 1 iteration:
   # if(measurecount==16){
@@ -143,6 +201,10 @@ while(measurecount<=16){
 	# setwd("~/ProgramsAndData/Results")
   # setwd("/Users/oba2311/Desktop/Minerva/Senior/CS tutorial/final project/socialCapital/Results")
   setwd("/Users/oba2311/Desktop/Minerva/Senior/CS tutorial/final project/socialCapital/originalCode/2010-0760_Data/Results")
+=======
+	
+	setwd("~/ProgramsAndData/Results")
+>>>>>>> 4712c3a07c9066896ec71e615bf89e1bacef4876
 	
 	clust<-mat2[,measurecount]	
 	supp<-mat1[,measurecount]
@@ -169,14 +231,19 @@ while(measurecount<=16){
 
 	name<-paste("g'=",name_base,", g=", name_context, sep="") 
 	name2=paste(name_base1,"-", name_context1, sep="")
+<<<<<<< HEAD
 	# plotname=paste("~/ProgramsAndData/Results/Supp_SuppInv_",name2,".jpeg", sep="")
 	# plotname=paste("/Users/oba2311/Desktop/Minerva/Senior/CS tutorial/final project/socialCapital/originalCode/2010-0760_Data/Results/Supp_SuppInv_",name2,".jpeg", sep="")
 	# modifying the name to fit PDF, since trying to fix the savePlot problem with a different implementation:
 	plotname=paste("/Users/oba2311/Desktop/Minerva/Senior/CS tutorial/final project/socialCapital/originalCode/2010-0760_Data/Results/Supp_SuppInv_",name2,".PDF", sep="")
+=======
+	plotname=paste("~/ProgramsAndData/Results/Supp_SuppInv_",name2,".jpeg", sep="")
+>>>>>>> 4712c3a07c9066896ec71e615bf89e1bacef4876
 
 	plot(xax,supp.smoothed, type="l", lty=2, lwd=2, sub="", 
 		main=name, ylab="", xlab="", col='blue', ylim=c(0,1))
 	lines(xax,clust.smoothed, col='black',lty=1, lwd=2)
+<<<<<<< HEAD
 	# legend("topleft",  c("Linked Pairs", "Not Linked Pairs"), col=c(4,1), lty=c(2,1), ncol = 1, cex = 0.8)
 	# changes I made to the legend so it works on my mac:
 	 legend("topleft",  c("Linked Pairs", "Not Linked Pairs"), col=c(4,1), lty=c(2,1), ncol = 1, cex = 0.6)
@@ -193,10 +260,21 @@ while(measurecount<=16){
 	# modifying the name to fit PDF, since trying to fix the savePlot problem with a different implementation:
 	plotname=paste("/Users/oba2311/Desktop/Minerva/Senior/CS tutorial/final project/socialCapital/originalCode/2010-0760_Data/Results/Supp_SuppInv_Ord_",name2,".pdf", sep="")
 	
+=======
+	legend("topleft",  c("Linked Pairs", "Not Linked Pairs"), col=c(4,1), lty=c(2,1), ncol = 1, cex = 0.8)
+	savePlot(filename=plotname , type ="jpeg");
+	
+
+	name<-paste("g'=",name_base,", g=", name_context, sep="") 
+	name2=paste(name_base1,"-", name_context1, sep="")
+	plotname=paste("~/ProgramsAndData/Results/Supp_SuppInv_Ord_",name2,".jpeg", sep="")
+
+>>>>>>> 4712c3a07c9066896ec71e615bf89e1bacef4876
 	plot(xax,both.sorted.smoothed[,1], type="l", lty=2, lwd=2, sub="", 
 		main=name, ylab="", xlab="", col='blue', ylim=c(0,1))
 	lines(xax,both.sorted.smoothed[,2], col='black',lty=1, lwd=2)
 	legend("topleft",  c("Linked Pairs", "Not Linked Pairs"), col=c(4,1), lty=c(2,1), ncol = 1, cex = 0.8)
+<<<<<<< HEAD
 	# savePlot(filename=plotname , type ="jpeg");
 	dev.copy2pdf(file=plotname)
 
@@ -205,3 +283,30 @@ while(measurecount<=16){
 
 # setwd("~/ProgramsAndData/Code")
 setwd("/Users/oba2311/Desktop/Minerva/Senior/CS tutorial/final project/socialCapital/Code")
+=======
+	savePlot(filename=plotname , type ="jpeg");
+	
+
+
+
+
+	measurecount<-measurecount+1
+}
+setwd("~/ProgramsAndData/Code")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> 4712c3a07c9066896ec71e615bf89e1bacef4876

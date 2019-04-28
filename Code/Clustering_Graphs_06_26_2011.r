@@ -1,10 +1,16 @@
 library(statnet)
 #install.packages('statnet')
 
+<<<<<<< HEAD
 # this works as it is and produces a 1:1 to the original!
 
 #########Program Code#################################
 setwd("/Users/oba2311/Desktop/Minerva/Senior/CS tutorial/final project/socialCapital/originalCode/2010-0760_Data/Data")
+=======
+
+#########Program Code#################################
+setwd("/Users/oba2311/Desktop/Minerva/Senior/CS tutorial/final project/socialCapital/Data")
+>>>>>>> 4712c3a07c9066896ec71e615bf89e1bacef4876
 name1="Support_6_Vlevel06_26_2011"
 name2="Clustering06_26_2011"
 

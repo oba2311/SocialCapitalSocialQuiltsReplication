@@ -1,9 +1,13 @@
+<<<<<<< HEAD
 rm(list=ls())
 
+=======
+>>>>>>> 4712c3a07c9066896ec71e615bf89e1bacef4876
 library(statnet)
 
 
 #########Program Code#################################
+<<<<<<< HEAD
 setwd("/Users/oba2311/Desktop/Minerva/Senior/CS tutorial/final project/socialCapital/originalCode/2010-0760_Data/Data")
 
 
@@ -23,6 +27,15 @@ name5="Support_4_Vlevel06_26_2011"
 name6="Support_5_Vlevel06_26_2011"
 
 # the authors get rid of the villages with problematic data colection (13+21):
+=======
+setwd("~/ProgramsAndData/Data")
+name1="Support_6_Vlevel06_26_2010"
+name2="Support_1_Vlevel06_26_2010"
+name3="Support_2_Vlevel06_26_2010"
+name4="Support_3_Vlevel06_26_2010"
+name5="Support_4_Vlevel06_26_2010"
+name6="Support_5_Vlevel06_26_2010"
+>>>>>>> 4712c3a07c9066896ec71e615bf89e1bacef4876
 
 temp1<-read.table(paste(name1,".csv", sep=""),  sep = ",", header=FALSE)
 mat1<-data.matrix(temp1)
@@ -162,7 +175,11 @@ while(measurecount<=16){
 	}
 
 
+<<<<<<< HEAD
   setwd("/Users/oba2311/Desktop/Minerva/Senior/CS tutorial/final project/socialCapital/Results")
+=======
+	setwd("~/ProgramsAndData/Results")
+>>>>>>> 4712c3a07c9066896ec71e615bf89e1bacef4876
 	
 	
 	supp<-mat1[,measurecount]
@@ -177,11 +194,14 @@ while(measurecount<=16){
 	all[,5]<-mat5[,measurecount]
 	all[,6]<-mat6[,measurecount]		
 	
+<<<<<<< HEAD
 	
 	name<-paste("g'=",name_base,", g=", name_context, sep="")
 	name2=paste(name_base1,"-", name_context1, sep="")
 	plotname=paste("/Users/oba2311/Desktop/Minerva/Senior/CS tutorial/final project/socialCapital/Results/Supp_Lev",name2,".png", sep="")
 	
+=======
+>>>>>>> 4712c3a07c9066896ec71e615bf89e1bacef4876
 	print(paste("Plotting...", name_base, "-", name_context))
 	all.sorted<-all[order(all[,1], decreasing=FALSE),] 
 
@@ -195,14 +215,23 @@ while(measurecount<=16){
 	all.sorted.smoothed[,5]<-loess(all.sorted[,5]~xax, span=0.5)$fitted
 	all.sorted.smoothed[,6]<-loess(all.sorted[,6]~xax, span=0.5)$fitted
 
+<<<<<<< HEAD
 	plot(xax,all.sorted.smoothed[,1], type="l", lty=1, lwd=2, 
 		# main=name, ylab="", xlab="", col='black', ylim=c(0,1))
+=======
+	name<-paste("g'=",name_base,", g=", name_context, sep="") 
+	name2=paste(name_base1,"-", name_context1, sep="")
+	plotname=paste("~/ProgramsAndData/Results/Supp_Lev",name2,".jpeg", sep="")
+
+	plot(xax,all.sorted.smoothed[,1], type="l", lty=1, lwd=2, 
+>>>>>>> 4712c3a07c9066896ec71e615bf89e1bacef4876
 		main=name, ylab="", xlab="", col='black', ylim=c(0,1))
 	lines(xax,all.sorted.smoothed[,2], col='blue',lty=2, lwd=2)
 	lines(xax,all.sorted.smoothed[,3], col='red',lty=3, lwd=2)
 	lines(xax,all.sorted.smoothed[,4], col='green',lty=4, lwd=2)
 	lines(xax,all.sorted.smoothed[,5], col='black',lty=5, lwd=2)
 	lines(xax,all.sorted.smoothed[,6], col='black',lty=6, lwd=2)
+<<<<<<< HEAD
 # modifications to the legend's size:
 	# legend("topleft",  c("Supported", "by 1", "by 2", "by 3", "by 4", "by 5"), col=c(1,4,2,3,1,1), lty=c(1,2,3,4,5,6), ncol = 1, cex = 0.8)
 	par(mar=c(5.1, 4.1, 4.1, 8.1), xpd=TRUE)
@@ -217,3 +246,29 @@ while(measurecount<=16){
 	measurecount<-measurecount+1
 }
 setwd("/Users/oba2311/Desktop/Minerva/Senior/CS tutorial/final project/socialCapital/Code")
+=======
+
+	legend("topleft",  c("Supported", "by 1", "by 2", "by 3", "by 4", "by 5"), col=c(1,4,2,3,1,1), lty=c(1,2,3,4,5,6), ncol = 1, cex = 0.8)
+	print(paste("Writing...", plotname))	
+	savePlot(filename=plotname , type ="jpeg");
+	
+	measurecount<-measurecount+1
+}
+setwd("~/ProgramsAndData/Code")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> 4712c3a07c9066896ec71e615bf89e1bacef4876
